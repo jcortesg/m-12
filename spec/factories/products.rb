@@ -1,0 +1,8 @@
+FactoryBot.define do
+  factory :product do
+    name { Faker::Commerce.product_name }
+    price { Faker::Commerce.price(range: 0..100.0) }
+    stock { Faker::Number.number(digits: 1) }
+    url { Faker::Internet.url }
+  end
+end
