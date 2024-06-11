@@ -98,6 +98,11 @@ GEM
     error_highlight (0.6.0)
     erubi (1.12.0)
     execjs (2.9.1)
+    faker (3.4.1)
+      i18n (>= 1.8.11, < 2)
+    ffi (1.17.0)
+    ffi (1.17.0-arm64-darwin)
+    ffi (1.17.0-x86_64-darwin)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.5)
@@ -224,6 +229,14 @@ GEM
     rubocop-ast (1.31.3)
       parser (>= 3.3.1.0)
     ruby-progressbar (1.13.0)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -242,6 +255,7 @@ GEM
     stringio (3.1.0)
     strscan (3.1.0)
     thor (1.3.1)
+    tilt (2.3.0)
     timeout (0.4.1)
     turbo-rails (2.0.5)
       actionpack (>= 6.0.0)
@@ -274,12 +288,14 @@ DEPENDENCIES
   bootstrap (~> 5.3)
   debug
   error_highlight (>= 0.4.0)
+  faker (~> 3.4)
   importmap-rails
   jbuilder
   puma (>= 5.0)
   rails (~> 7.1.3, >= 7.1.3.3)
   redis (>= 4.0.1)
   rubocop (~> 1.64)
+  sassc-rails (~> 2.1)
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails

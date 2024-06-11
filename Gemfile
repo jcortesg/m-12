@@ -66,3 +66,7 @@ end
 gem "rubocop", "~> 1.64"
 
 gem "bootstrap", "~> 5.3"
+
+gem "sassc-rails", "~> 2.1"
+
+gem "faker", "~> 3.4"
