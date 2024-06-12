@@ -1,0 +1,12 @@
+class CreateClients < ActiveRecord::Migration[7.1]
+  def change
+    create_table :clients do |t|
+      t.string :email, null: false
+      t.string :nombre, null: false
+
+      t.timestamps
+    end
+
+    add_index :clients, :email, unique: true
+  end
+end

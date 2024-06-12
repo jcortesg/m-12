@@ -14,8 +14,10 @@
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <%= link_to "", class: 'nav-link' do %>
-            <i class="bi bi-cart"></i> Carrito
+          <%= link_to cart_path, class: 'nav-link' do %>
+            <i class="bi bi-cart"></i> 
+            ( <%= current_order&.item_count || 0 %>)
+            Carrito
           <% end %>
         </li>
       </ul>

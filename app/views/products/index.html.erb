@@ -1,15 +1,12 @@
-  
 <div class="row">
   <% @products.each do |product| %>
     <div class="col-md-2">
       <div class="card mb-4 shadow-sm">
-         <%= link_to product_path(product) do %>
         <img src="<%= product.url %>" class="card-img-top" alt="<%= product.name %>">
-        <% end %>
         <div class="card-body">
-          <h5 class="card-title"><%= product.name %></h5>
+          <h5 class="card-title"><%= product.name %>(<%= product.stock %>)</h5>
           <p class="card-text">$<%= product.price %></p>
-          <%= button_to 'Agregar al carrito', "", method: :post, class: 'btn btn-success' %>
+          <%= button_to 'Agregar al carrito', cart_line_items_path(product_id: product.id), method: :post, class: 'btn btn-success' %>
         </div>
       </div>
     </div>

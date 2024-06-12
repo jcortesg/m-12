@@ -1,0 +1,7 @@
+<article>
+  <% if @order.line_items.empty? %>
+    <%= render 'carts/cart_empty' %>
+  <% else %>
+    <%= render 'carts/cart_items', line_items: @order.line_items %>
+  <% end%>
+</article>
