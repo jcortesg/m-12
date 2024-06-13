@@ -1,0 +1,32 @@
+    <h1>Órdenes</h1>
+<% if @orders.empty? %>
+  <p>No tienes órdenes.</p>
+<% else %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Items</th>
+        <th>Total</th>
+        <th>Estado</th>
+        <th>Completada</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.id %></td>
+          <td><%= order.line_items.sum(:quantity) %></td>
+          <td><%= order.total %></td>
+          <td><%= order.state %></td>
+          <td><%= order.completed_at %></td>
+          <td>
+            <%= button_to 'Eliminar', order, method: :delete, class: 'btn btn-danger', data: { confirm: '¿Estás seguro?' } %>
+            <%= link_to 'Ver Detalles', order_path(order), class: 'btn btn-primary' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

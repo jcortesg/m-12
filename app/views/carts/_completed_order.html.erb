@@ -1,0 +1,15 @@
+<%= form_with(model: @order, local: true) do |form| %>
+  <%= form.fields_for :client do |client_fields| %>
+    <div class="form-group">
+      <%= client_fields.label :nombre %>
+      <%= client_fields.text_field :nombre, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= client_fields.label :email %>
+      <%= client_fields.email_field :email, class: 'form-control' %>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= form.submit "Guardar Pedido", class: 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<h1>Detalles de la Orden</h1>
+<p><strong>ID de Orden:</strong> <%= @order.id %></p>
+<p><strong>Estado:</strong> <%= @order.state %></p>
+<p><strong>Fecha de Completado:</strong> <%= @order.completed_at %></p>
+<h2>Productos</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Precio Unitario</th>
+      <th>Cantidad</th>
+      <th>Precio Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order.line_items.each do |line_item| %>
+      <tr>
+        <td><%= line_item.product.name %></td>
+        <td><%= number_to_currency(line_item.product.price) %></td>
+        <td><%= line_item.quantity %></td>
+        <td><%= number_to_currency(line_item.price) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Total: <%= number_to_currency(@order.total) %></h2>

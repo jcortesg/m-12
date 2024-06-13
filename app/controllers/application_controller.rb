@@ -19,8 +19,12 @@ class ApplicationController < ActionController::Base
   def current_user
     return @current_user if @current_user
 
-    client_id = session[:user_id]
-    @current_user = Client.find_by(id: client_id)
+    @current_user = Client.find_by(id: cookies.signed[:user])
+  end
+
+  def set_current_user(client)
+    cookies.permanent.signed[:user] = client.id
+    @current_user = client
   end
 
   def set_guest_token
